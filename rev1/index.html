@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8 />
+	<title>Funky CSS 3D Clouds</title>
+	<!-- call stylesheet -->
+	<link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+	<!-- load jquery -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+	
+<script type="text/javascript">
+	//<![CDATA[
+	try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:1404894048,byc:0,owlid:"cf",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/dokv=88e434a982/"},atok:"d59f84b4f2d54ca55537e56ca75e3b64",petok:"97b6a91a370e67306eb26e39eaf328b128f01c37-1404982631-1800",zone:"clicktorelease.com",rocket:"0",apps:{"ga_key":{"ua":"UA-625393-26","ga_bs":"2"},"abetterbrowser":{"ie":"7"}}}];!function(a,b){a=document.createElement("script"),b=document.getElementsByTagName("script")[0],a.async=!0,a.src="//ajax.cloudflare.com/cdn-cgi/nexp/dokv=97fb4d042e/cloudflare.min.js",b.parentNode.insertBefore(a,b)}()}}catch(e){};
+	//]]>
+</script>
+<style>
+		*{box-sizing:border-box;margin:0;padding:0}body{color:#eee;text-shadow:0 -1px 0 rgba(0,0,0,.6);font-family:'Open Sans',sans-serif;font-size:13px;line-height:16px;overflow:hidden}#viewport{-webkit-perspective:400;-moz-perspective:400;-o-perspective:400;position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;background-image:linear-gradient(bottom,#4584b4 28%,#1f4778 64%);background-image:-o-linear-gradient(bottom,#4584b4 28%,#1f4778 64%);background-image:-moz-linear-gradient(bottom,#4584b4 28%,#1f4778 64%);background-image:-webkit-linear-gradient(bottom,#4584b4 28%,#1f4778 64%);background-image:-ms-linear-gradient(bottom,#4584b4 28%,#1f4778 64%);background-image: -webkit-gradient(
+			linear,
+			left bottom,
+			left top,
+			color-stop(0.28, rgb(69,132,180)),
+			color-stop(0.64, rgb(31,71,120))
+		)}#world{position:absolute;left:50%;top:50%;margin-left:-256px;margin-top:-256px;height:512px;width:512px;background-color:rgba(255,0,0,.2);-webkit-transform-style:preserve-3d;-moz-transform-style:preserve-3d;-o-transform-style:preserve-3d}
+</style>
+
+
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+
+<h1> Funky CSS3 Clouds </h1>
+
+	<div id="viewport" >
+		<div id="world" ></div>
+	</div>
+	
+	
+	
+	
+	<!-- make everything go! -->
+	<script>
+		var world=document.getElementById('world'),viewport=document.getElementById('viewport'),d=0,worldXAngle=0,worldYAngle=0;window.addEventListener('mousewheel',onContainerMouseWheel);window.addEventListener('DOMMouseScroll',onContainerMouseWheel);window.addEventListener('mousemove',function(e){worldYAngle=-(.5-(e.clientX/window.innerWidth))*180;worldXAngle=(.5-(e.clientY/window.innerHeight))*180;updateView();});function updateView(){var t='translateZ( '+d+'px ) rotateX( '+worldXAngle+'deg) rotateY( '+worldYAngle+'deg)';world.style.webkitTransform=t;world.style.MozTransform=t;world.style.oTransform=t;}
+		function onContainerMouseWheel(event){event=event?event:window.event;d=d-(event.detail?event.detail*-5:event.wheelDelta/8);updateView();}
+	</script>
+
+	
+</body>
+</html>
+
+
